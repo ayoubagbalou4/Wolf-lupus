@@ -1,0 +1,148 @@
+To implement a functional **Checkout** system, you'll need additional tables to manage customer details, orders, payment information, and more. Below is the database schema you can use:
+
+---
+
+### **Tables for Checkout System**
+
+#### **1. Customers Table**
+This table stores customer details.
+
+```sql
+CREATE TABLE customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    phone VARCHAR(20),
+    billing_address TEXT NOT NULL,
+    shipping_address TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+---
+
+#### **2. Orders Table**
+This table stores order information, linking customers to their orders.
+
+```sql
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    status ENUM('Pending', 'Processing', 'Shipped', 'Completed', 'Cancelled') DEFAULT 'Pending',
+    shipping_fee DECIMAL(10, 2) DEFAULT 0.00,
+    tax DECIMAL(10, 2) DEFAULT 0.00,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+```
+
+---
+
+#### **3. Order_Items Table**
+This table tracks products associated with an order.
+
+```sql
+CREATE TABLE order_items (
+    order_item_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+```
+
+---
+
+#### **4. Payment Table**
+This table stores payment details for each order.
+
+```sql
+CREATE TABLE payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    payment_method ENUM('Card', 'PayPal', 'Bank Transfer', 'Cash on Delivery') NOT NULL,
+    payment_status ENUM('Pending', 'Paid', 'Failed') DEFAULT 'Pending',
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id)
+);
+```
+
+---
+
+### **Existing Tables Integration**
+
+#### **5. Products Table (Existing)**
+Ensure it contains the following columns:
+- `product_id` (Primary Key)
+- `product_name`
+- `price`
+- `category_id` (Foreign Key to `categories` table)
+- `stock_quantity` (to manage inventory)
+
+#### **6. Categories Table (Existing)**
+This table organizes products into categories:
+- `category_id` (Primary Key)
+- `category_name`
+
+---
+
+### **Relationships Between Tables**
+1. **`customers` ↔ `orders`**
+   - A customer can have multiple orders.
+2. **`orders` ↔ `order_items`**
+   - Each order can include multiple items.
+3. **`order_items` ↔ `products`**
+   - Tracks which products are part of an order.
+4. **`orders` ↔ `payments`**
+   - Each order has an associated payment.
+
+---
+
+### **Workflow Example**
+1. **Customer Checkout:**
+   - Save customer data in `customers` if they're new.
+   - Create a new entry in `orders` for their purchase.
+
+2. **Add Products to Order:**
+   - Insert rows in `order_items` linking the `order_id` to `product_id`, with quantities and prices.
+
+3. **Handle Payment:**
+   - Save payment details in `payments` for the `order_id`.
+
+4. **Update Inventory:**
+   - Reduce `stock_quantity` in `products` for the items in `order_items`.
+
+---
+
+### **Example SQL Insertion**
+
+#### **Insert New Customer**
+```sql
+INSERT INTO customers (name, email, phone, billing_address, shipping_address)
+VALUES ('John Doe', 'john@example.com', '1234567890', '123 Main St', '123 Main St');
+```
+
+#### **Insert Order**
+```sql
+INSERT INTO orders (customer_id, total_amount, shipping_fee, tax)
+VALUES (1, 50.00, 5.00, 3.00);
+```
+
+#### **Insert Order Items**
+```sql
+INSERT INTO order_items (order_id, product_id, quantity, price)
+VALUES (1, 101, 2, 20.00), (1, 102, 1, 10.00);
+```
+
+#### **Insert Payment**
+```sql
+INSERT INTO payments (order_id, payment_method, payment_status)
+VALUES (1, 'Card', 'Paid');
+```
+
+---
+
+Let me know if you need help with additional queries or logic for managing this database!
