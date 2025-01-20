@@ -22,8 +22,8 @@ import ProductsByCategory from './pages/ProductsByCategory';
 const App = () => {
 
 
-  // axios.defaults.baseURL = 'https://perfum-6j3u.vercel.app/'
-  axios.defaults.baseURL = 'http://localhost:4000/'
+  axios.defaults.baseURL = 'https://wolf-lupus-o4oy.vercel.app/'
+  // axios.defaults.baseURL = 'http://localhost:4000/'
 
   return (
     <BrowserRouter>
