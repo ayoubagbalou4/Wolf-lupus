@@ -1,18 +1,20 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 
-
 export const CartContext = createContext(null);
-const Context = ({ children }) => {
 
+const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addToCart = (product, quantity = 1) => {
         setCart((prevCart) => {
-            const existingItem = prevCart.find(item => item._id === product._id);
+            const existingItem = prevCart.find(
+                (item) => item._id === product._id && item.selectedSize.size === product.selectedSize.size
+            );
+
             if (existingItem) {
-                return prevCart.map(item =>
-                    item._id === product._id
+                return prevCart.map((item) =>
+                    item._id === product._id && item.selectedSize.size === product.selectedSize.size
                         ? { ...item, quantity: item.quantity + quantity }
                         : item
                 );
@@ -20,51 +22,76 @@ const Context = ({ children }) => {
                 return [...prevCart, { ...product, quantity }];
             }
         });
-        const Toast = Swal.mixin({
+
+        Swal.fire({
             toast: true,
-            position: "top-end",
+            position: 'top-end',
+            icon: 'success',
+            title: 'Added to cart!',
             showConfirmButton: false,
             timer: 2000,
             timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "success",
-            title: "Added To Cart"
         });
     };
 
-    const removeFromCart = (productId) => {
-        setCart((prevCart) => prevCart.filter(item => item._id !== productId));
-    };
-
-    const updateQuantity = (productId, quantity) => {
+    const removeFromCart = (productId, size) => {
         setCart((prevCart) =>
-            prevCart.map(item =>
-                item.id === productId
+            prevCart.filter(
+                (item) => item._id !== productId || item.selectedSize.size !== size
+            )
+        );
+
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: 'info',
+            title: 'Removed from cart!',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+        });
+    };
+
+ 
+    const updateQuantity = (productId, size, quantity) => {
+        if (quantity < 1) return; // Ensure quantity is at least 1
+
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item._id === productId && item.selectedSize.size === size
                     ? { ...item, quantity }
                     : item
             )
         );
     };
 
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
 
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+
+    const totalPrice = cart.reduce(
+        (sum, item) => sum + item.quantity * item.selectedSize.price,
+        0
+    );
 
     useEffect(() => {
-        console.log(cart)
-    }, [cart])
+        console.log('Cart updated:', cart);
+    }, [cart]);
 
-    const values = { cart, addToCart, removeFromCart, updateQuantity, totalItems, totalPrice }
+    const contextValues = {
+        cart,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        totalItems,
+        totalPrice,
+    };
+
     return (
-        <CartContext.Provider value={values}>
+        <CartContext.Provider value={contextValues}>
             {children}
         </CartContext.Provider>
-    )
-}
+    );
+};
 
-export default Context
+export default CartProvider;

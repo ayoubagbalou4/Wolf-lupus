@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../Context';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const { cart, removeFromCart, updateQuantity, totalItems, totalPrice } = useContext(CartContext);
@@ -16,51 +16,68 @@ const Cart = () => {
                     {cart.length > 0 ? (
                         <>
                             <div className="cart-items">
-                                {cart.map((item) => (
-                                    <div className="cart-item" key={item._id}>
+                                {cart.map((item, index) => (
+                                    <div className="cart-item" key={`${item._id}-${item.selectedSize.size}-${index}`}>
                                         <div className="item-image">
                                             <img src={item.image_url} alt={item.name} />
                                         </div>
                                         <div className="item-details">
                                             <h3 className="item-name">{item.name}</h3>
-                                            <p className="item-price">${item.price.toFixed(2)}</p>
+                                            <p className="item-size">
+                                                Size: {item.selectedSize.size}ml → ${item.selectedSize.price.toFixed(2)}
+                                            </p>
                                             <div className="item-quantity">
-                                                <label htmlFor={`quantity-${item.id}`}>Quantity:</label>
+                                                <label htmlFor={`quantity-${index}`}>Quantity:</label>
                                                 <input
                                                     type="number"
-                                                    id={`quantity-${item.id}`}
-                                                    name="quantity"
+                                                    id={`quantity-${index}`}
                                                     value={item.quantity}
                                                     min="1"
-                                                    onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                                                    onChange={(e) =>
+                                                        updateQuantity(item._id, item.selectedSize.size, parseInt(e.target.value))
+                                                    }
                                                     className="quantity-input"
                                                 />
                                             </div>
-                                            <p className="item-total">Total: ${(item.quantity * item.price).toFixed(2)}</p>
+                                            <p className="item-total">
+                                                Total: ${(item.quantity * item.selectedSize.price).toFixed(2)}
+                                            </p>
                                         </div>
                                         <button
                                             className="remove-item"
-                                            onClick={() => removeFromCart(item._id)}
+                                            onClick={() => removeFromCart(item._id, item.selectedSize.size)}
                                         >
-                                            <i className="fa fa-trash"></i>
+                                            <i className="fa fa-trash"></i> Remove
                                         </button>
                                     </div>
                                 ))}
                             </div>
+
                             <div className="cart-summary">
                                 <div className="summary-item">
-                                    <p><strong>Total Items:</strong> {totalItems}</p>
-                                    <p><strong>Total Price:</strong> ${totalPrice.toFixed(2)}</p>
+                                    <p>
+                                        <strong>Total Items:</strong> {totalItems}
+                                    </p>
+                                    <p>
+                                        <strong>Total Price:</strong> ${totalPrice.toFixed(2)}
+                                    </p>
                                 </div>
-                                <Link to={'/checkout'} ><button className="btn checkout-btn">Proceed to Checkout</button></Link>
+                                <Link to="/checkout">
+                                    <button className="btn checkout-btn">Proceed to Checkout</button>
+                                </Link>
                             </div>
                         </>
                     ) : (
-                        <p>Your cart is empty.</p>
+                        <div className="empty-cart">
+                            <p>Your cart is empty. Start adding items to your cart!</p>
+                            <Link to="/">
+                                <button className="btn shop-btn">Shop Now</button>
+                            </Link>
+                        </div>
                     )}
                 </div>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };

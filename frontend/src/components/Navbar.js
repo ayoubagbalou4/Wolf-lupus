@@ -23,7 +23,7 @@ const Navbar = () => {
                 </nav>
                 <div className="header-icons">
                     <Link to="#search" className="icon search-icon"><i className="fas fa-search"></i></Link>
-                    <Link to="#cart" className="icon cart-icon"><i className="fas fa-shopping-cart"></i></Link>
+                    <Link to="/cart" className="icon cart-icon"><i className="fas fa-shopping-cart"></i></Link>
                 </div>
                 <div className="menu-toggle" id="mobile-menu">
                     <i className="fas fa-bars"></i>
