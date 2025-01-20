@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 
 const AddCategory = () => {
 
+    const [imageIfExist, setImageIfExist] = useState();
     const navigate = useNavigate()
     const [loadingAddCategory, setLoadingAddCategory] = useState(false)
     const [categoriesData, setCategoriesData] = useState({})
@@ -18,7 +19,30 @@ const AddCategory = () => {
         e.preventDefault()
         setLoadingAddCategory(true)
         try {
-            const response = await axios.post('/categories', categoriesData)
+            let uploadedImageUrl = '';
+            if (imageIfExist) {
+                const formData = new FormData();
+                formData.append('image', imageIfExist);
+
+                const imgUploadRes = await axios.post(
+                    `https://api.imgbb.com/1/upload?key=dd221145c4c2e3c325de99c28cdbcf0c`,
+                    formData,
+                    {
+                        headers: { 'Content-Type': 'multipart/form-data' },
+                        withCredentials: false,
+                    }
+                );
+
+                if (imgUploadRes.data) {
+                    uploadedImageUrl = imgUploadRes.data.data.url;
+                }
+            }
+
+            const updatedCategoriesData = {
+                ...categoriesData,
+                image_url: uploadedImageUrl,
+            };
+            const response = await axios.post('/categories', updatedCategoriesData)
             setLoadingAddCategory(false)
             navigate('/admin/categories')
             Swal.fire({
@@ -47,6 +71,15 @@ const AddCategory = () => {
                         <div>
                             <p>description</p>
                             <input onChange={handleCategory} name='description' type="text" placeholder="Description" required />
+                        </div>
+                        <div>
+                            <p>Image</p>
+                            <input
+                                onChange={(e) => setImageIfExist(e.target.files[0])}
+                                type="file"
+                                name="image_url"
+                                required
+                            />
                         </div>
 
                         {

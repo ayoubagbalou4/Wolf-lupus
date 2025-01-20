@@ -76,7 +76,7 @@ const Categories = () => {
 
                                         <td className='actionTable'>
                                             <button onClick={() => deleteCategoryConfirm(category._id)} className='delete'>Delete</button>
-                                            <Link to={`/admin/edit-category/${category.id}`}><button className='update'>Update</button></Link>
+                                            <Link to={`/admin/edit-category/${category._id}`}><button className='update'>Update</button></Link>
                                         </td>
                                     </tr>
                                 ))

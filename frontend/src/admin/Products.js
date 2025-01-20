@@ -69,8 +69,7 @@ const Products = () => {
                                 <th>price</th>
                                 <th>stock_quantity</th>
                                 <th>category_id</th>
-                                <th>image_url</th>
-
+                                {/* <th>image_url</th> */}
                                 <th>actions</th>
                             </tr>
                             {
@@ -78,10 +77,16 @@ const Products = () => {
                                     <tr key={index}>
                                         <td>{product.name}</td>
                                         <td>{product.description}</td>
-                                        <td>{product.price}</td>
+                                        <td>
+                                            {product.sizes?.map((sizeObj, i) => (
+                                                <p key={i}>
+                                                    {sizeObj.size}ml → ${sizeObj.price.toFixed(2)}
+                                                </p>
+                                            ))}
+                                        </td>
                                         <td>{product.stock_quantity}</td>
-                                        <td>{product.category_id.name}</td>
-                                        <td>{product.image_url}</td>
+                                        <td>{product.category_id?.name}</td>
+                                        {/* <td>{product.image_url}</td> */}
 
                                         <td className='actionTable'>
                                             <button onClick={() => deleteProductConfirm(product._id)} className='delete'>Delete</button>

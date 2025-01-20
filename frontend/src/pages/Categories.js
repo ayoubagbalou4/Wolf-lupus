@@ -31,7 +31,7 @@ const Categories = () => {
                     {
                         categories.map((category, index) => (
                             <div className="category-card" key={index}>
-                                <img src="https://i.ibb.co/23CMMH2/perfume1.png" alt="Women's Fragrances" />
+                                <img src={category.image_url} alt={category.image_url} />
                                 <h3>{category.name}</h3>
                                 <Link to={`/categories/${category._id}`} className="btn">Shop Now</Link>
                             </div>

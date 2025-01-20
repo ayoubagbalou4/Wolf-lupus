@@ -3,8 +3,8 @@ const Category = require('../models/Category');
 
 exports.createCategory = async (req, res) => {
     try {
-        const { name,description } = req.body;
-        const newCategory = Category({ name,description });
+        const { name,description,image_url } = req.body;
+        const newCategory = Category({ name,description,image_url });
         await newCategory.save();
         res.status(201).json({ message: 'Category created successfully', category: newCategory });
     } catch (error) {
@@ -37,10 +37,10 @@ exports.getCategoryById = async (req, res) => {
 exports.updateCategory = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name,description } = req.body;
+        const { name,description,image_url } = req.body;
         const updatedCategory = await Category.findByIdAndUpdate(
             id,
-            { name,description },
+            { name,description,image_url },
             { new: true, runValidators: true }
         );
         if (!updatedCategory) {

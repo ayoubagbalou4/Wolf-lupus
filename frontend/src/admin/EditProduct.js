@@ -11,6 +11,7 @@ const EditProduct = () => {
     const [loadingGetSingleProduct, setLoadingGetSingleProduct] = useState(false);
     const [productsData, setProductsData] = useState({});
     const [sizes, setSizes] = useState([{ size: '', price: '' }]); // For dynamic sizes and prices
+    const [imageIfExist, setImageIfExist] = useState(null); // To handle image upload
 
     const handleProduct = (e) => {
         setProductsData({ ...productsData, [e.target.name]: e.target.value });
@@ -53,8 +54,28 @@ const EditProduct = () => {
         e.preventDefault();
         setLoadingEditProduct(true);
         try {
+            let uploadedImageUrl = productsData.image_url; // Keep existing image if no new image is selected
+            if (imageIfExist) {
+                const formData = new FormData();
+                formData.append('image', imageIfExist);
+
+                const imgUploadRes = await axios.post(
+                    `https://api.imgbb.com/1/upload?key=dd221145c4c2e3c325de99c28cdbcf0c`,
+                    formData,
+                    {
+                        headers: { 'Content-Type': 'multipart/form-data' },
+                        withCredentials: false,
+                    }
+                );
+
+                if (imgUploadRes.data) {
+                    uploadedImageUrl = imgUploadRes.data.data.url;
+                }
+            }
+
             const updatedProductData = {
                 ...productsData,
+                image_url: uploadedImageUrl, // Update image_url field
                 sizes: sizes.filter((s) => s.size && s.price), // Include only valid size-price pairs
             };
 
@@ -140,12 +161,12 @@ const EditProduct = () => {
                                 <div>
                                     <p>Category</p>
                                     <select
-                                        value={productsData.category_id}
+                                        value={productsData.category_id?._id}
                                         onChange={handleProduct}
                                         name="category_id"
                                         required
                                     >
-                                        <option value="" disabled>
+                                        <option value="" disabled selected>
                                             Choose Category
                                         </option>
                                         {categories.map((category, index) => (
@@ -188,14 +209,11 @@ const EditProduct = () => {
                                     </button>
                                 </div>
                                 <div>
-                                    <p>Image URL</p>
+                                    <p>Image</p>
                                     <input
-                                        value={productsData.image_url}
-                                        onChange={handleProduct}
+                                        onChange={(e) => setImageIfExist(e.target.files[0])}
+                                        type="file"
                                         name="image_url"
-                                        type="text"
-                                        placeholder="Image URL"
-                                        required
                                     />
                                 </div>
                                 {!loadingEditProduct && <button type="submit">Edit Product</button>}

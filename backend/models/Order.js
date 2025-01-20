@@ -24,7 +24,7 @@ const orderModel = mongoose.model('order', {
         type: Number,
         require: true,
         default: 0
-    },
+    }, 
     tax: {
         type: Number,
         require: true,

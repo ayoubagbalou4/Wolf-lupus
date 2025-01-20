@@ -11,6 +11,10 @@ const categoryModel = mongoose.model('category', {
         type: String,
         require: true
     },
+    image_url: {
+        type: String,
+        require: true
+    }
 
 })
 module.exports = categoryModel
