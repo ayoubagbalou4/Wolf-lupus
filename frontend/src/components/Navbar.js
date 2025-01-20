@@ -21,9 +21,11 @@ const Navbar = () => {
                         <li><Link to={"/contact"}>Contact</Link></li>
                     </ul>
                 </nav>
-                <div className="header-icons">
-                    <Link to="#search" className="icon search-icon"><i className="fas fa-search"></i></Link>
-                    <Link to="/cart" className="icon cart-icon"><i className="fas fa-shopping-cart"></i></Link>
+                <div className="cart">
+                    <Link to="/cart">
+                        <i className="fas fa-shopping-cart"></i>
+                        <span className="cart-count">{cart.length}</span>
+                    </Link>
                 </div>
                 <div className="menu-toggle" id="mobile-menu">
                     <i className="fas fa-bars"></i>
