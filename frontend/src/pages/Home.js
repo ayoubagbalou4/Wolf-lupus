@@ -81,7 +81,11 @@ const Home = () => {
                                 <img src={product.image_url} alt="Product Img" />
                                 <div className="product-info">
                                     <h3>{product.name}</h3>
-                                    <p className="price">${product.price}</p>
+                                    {product.sizes?.map((sizeObj, i) => (
+                                        <p key={i}>
+                                            {sizeObj.size}ml → ${sizeObj.price.toFixed(2)}
+                                        </p>
+                                    ))}
                                     <Link to={`/product/${product._id}`} className="btn">View Details</Link>
                                 </div>
                             </div>

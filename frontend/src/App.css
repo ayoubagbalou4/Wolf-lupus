@@ -361,7 +361,7 @@
 
 .product-container {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -690,27 +690,26 @@ body {
 }
 
 .filter-category,
-.filter-price,
-.filter-scent {
+.filter-price {
     margin-bottom: 30px;
 }
 
-.filter-category h4,
-.filter-scent h4 {
+.filter-category h4 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: 500;
 }
 
-.filter-category ul,
-.filter-scent ul {
-    list-style-type: none;
+
+.checkDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 8px;
 }
 
-.filter-category li,
-.filter-scent li {
-    margin: 8px 0;
-    font-size: 1rem;
+.checkDiv input[type="checkbox"] {
+    margin-right: 8px;
 }
 
 .filter-price h4 {
