@@ -1,148 +1,293 @@
-To implement a functional **Checkout** system, you'll need additional tables to manage customer details, orders, payment information, and more. Below is the database schema you can use:
+import React, { useState } from "react";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
----
+// Renders errors or successfull transactions on the screen.
+function Message({ content }) {
+    return <p>{content}</p>;
+}
 
-### **Tables for Checkout System**
+function App() {
+    const initialOptions = {
+        "client-id":
+            "AVsOb5MxgoEvLuqz_qsc2V3-3IOwexFoCkkwxPHNEOdBWWU3gSff-QA0CnfqWII-04WRlm7HG9Q4xakN",
+        "enable-funding": "venmo",
+        "disable-funding": "",
+        "buyer-country": "US",
+        currency: "USD",
+        "data-page-type": "product-details",
+        components: "buttons",
+        "data-sdk-integration-source": "developer-studio",
+    };
 
-#### **1. Customers Table**
-This table stores customer details.
+    const [message, setMessage] = useState("");
 
-```sql
-CREATE TABLE customers (
-    customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone VARCHAR(20),
-    billing_address TEXT NOT NULL,
-    shipping_address TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    return (
+        <div className="App">
+            <PayPalScriptProvider options={initialOptions}>
+                <PayPalButtons
+                    style={{
+                        shape: "rect",
+                        layout: "vertical",
+                        color: "gold",
+                        label: "paypal",
+                    }} 
+                    createOrder={async () => {
+                        try {
+                            const response = await fetch("/api/orders", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                // use the "body" param to optionally pass additional order information
+                                // like product ids and quantities
+                                body: JSON.stringify({
+                                    cart: [
+                                        {
+                                            id: "YOUR_PRODUCT_ID",
+                                            quantity: "YOUR_PRODUCT_QUANTITY",
+                                        },
+                                    ],
+                                }),
+                            });
+
+                            const orderData = await response.json();
+
+                            if (orderData.id) {
+                                return orderData.id;
+                            } else {
+                                const errorDetail = orderData?.details?.[0];
+                                const errorMessage = errorDetail
+                                    ? `${errorDetail.issue} ${errorDetail.description} (${orderData.debug_id})`
+                                    : JSON.stringify(orderData);
+
+                                throw new Error(errorMessage);
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            setMessage(
+                                `Could not initiate PayPal Checkout...${error}`
+                            );
+                        }
+                    }} 
+                    onApprove={async (data, actions) => {
+                        try {
+                            const response = await fetch(
+                                `/api/orders/${data.orderID}/capture`,
+                                {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    },
+                                }
+                            );
+
+                            const orderData = await response.json();
+                            // Three cases to handle:
+                            //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+                            //   (2) Other non-recoverable errors -> Show a failure message
+                            //   (3) Successful transaction -> Show confirmation or thank you message
+
+                            const errorDetail = orderData?.details?.[0];
+
+                            if (errorDetail?.issue === "INSTRUMENT_DECLINED") {
+                                // (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+                                // recoverable state, per https://developer.paypal.com/docs/checkout/standard/customize/handle-funding-failures/
+                                return actions.restart();
+                            } else if (errorDetail) {
+                                // (2) Other non-recoverable errors -> Show a failure message
+                                throw new Error(
+                                    `${errorDetail.description} (${orderData.debug_id})`
+                                );
+                            } else {
+                                // (3) Successful transaction -> Show confirmation or thank you message
+                                // Or go to another URL:  actions.redirect('thank_you.html');
+                                const transaction =
+                                    orderData.purchase_units[0].payments
+                                        .captures[0];
+                                setMessage(
+                                    `Transaction ${transaction.status}: ${transaction.id}. See console for all available details`
+                                );
+                                console.log(
+                                    "Capture result",
+                                    orderData,
+                                    JSON.stringify(orderData, null, 2)
+                                );
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            setMessage(
+                                `Sorry, your transaction could not be processed...${error}`
+                            );
+                        }
+                    }} 
+                />
+            </PayPalScriptProvider>
+            <Message content={message} />
+        </div>
+    );
+}
+
+export default App; 
+
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
-```
 
----
 
-#### **2. Orders Table**
-This table stores order information, linking customers to their orders.
 
-```sql
-CREATE TABLE orders (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    total_amount DECIMAL(10, 2) NOT NULL,
-    status ENUM('Pending', 'Processing', 'Shipped', 'Completed', 'Cancelled') DEFAULT 'Pending',
-    shipping_fee DECIMAL(10, 2) DEFAULT 0.00,
-    tax DECIMAL(10, 2) DEFAULT 0.00,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-);
-```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React PayPal JS SDK Standard Integration</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="main.jsx"></script>
+  </body>
+</html>
 
----
 
-#### **3. Order_Items Table**
-This table tracks products associated with an order.
+import express from "express";
+import "dotenv/config";
+import {
+    ApiError,
+    CheckoutPaymentIntent,
+    Client,
+    Environment,
+    LogLevel,
+    OrdersController,
+    PaymentsController,
+} from "@paypal/paypal-server-sdk";
+import bodyParser from "body-parser";
 
-```sql
-CREATE TABLE order_items (
-    order_item_id INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT NOT NULL,
-    product_id INT NOT NULL,
-    quantity INT NOT NULL,
-    price DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
-);
-```
+const app = express();
+app.use(bodyParser.json());
 
----
+const {
+    PAYPAL_CLIENT_ID,
+    PAYPAL_CLIENT_SECRET,
+    PORT = 8080,
+} = process.env;
 
-#### **4. Payment Table**
-This table stores payment details for each order.
+const client = new Client({
+    clientCredentialsAuthCredentials: {
+        oAuthClientId: PAYPAL_CLIENT_ID,
+        oAuthClientSecret: PAYPAL_CLIENT_SECRET,
+    },
+    timeout: 0,
+    environment: Environment.Sandbox,
+    logging: {
+        logLevel: LogLevel.Info,
+        logRequest: { logBody: true },
+        logResponse: { logHeaders: true },
+    },
+}); 
+const ordersController = new OrdersController(client);
+const paymentsController = new PaymentsController(client);
 
-```sql
-CREATE TABLE payments (
-    payment_id INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT NOT NULL,
-    payment_method ENUM('Card', 'PayPal', 'Bank Transfer', 'Cash on Delivery') NOT NULL,
-    payment_status ENUM('Pending', 'Paid', 'Failed') DEFAULT 'Pending',
-    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id)
-);
-```
+/**
+ * Create an order to start the transaction.
+ * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
+ */
+const createOrder = async (cart) => {
+    const collect = {
+        body: {
+            intent: "CAPTURE",
+            purchaseUnits: [
+                {
+                    amount: {
+                        currencyCode: "USD",
+                        value: "100",
+                    },
+                },
+            ],
+        },
+        prefer: "return=minimal",
+    }; 
 
----
+    try {
+        const { body, ...httpResponse } = await ordersController.ordersCreate(
+            collect
+        );
+        // Get more response info...
+        // const { statusCode, headers } = httpResponse;
+        return {
+            jsonResponse: JSON.parse(body),
+            httpStatusCode: httpResponse.statusCode,
+        };
+    } catch (error) {
+        if (error instanceof ApiError) {
+            // const { statusCode, headers } = error;
+            throw new Error(error.message);
+        }
+    }
+};
 
-### **Existing Tables Integration**
+// createOrder route
+app.post("/api/orders", async (req, res) => {
+    try {
+        // use the cart information passed from the front-end to calculate the order amount detals
+        const { cart } = req.body;
+        const { jsonResponse, httpStatusCode } = await createOrder(cart);
+        res.status(httpStatusCode).json(jsonResponse);
+    } catch (error) {
+        console.error("Failed to create order:", error);
+        res.status(500).json({ error: "Failed to create order." });
+    }
+});
 
-#### **5. Products Table (Existing)**
-Ensure it contains the following columns:
-- `product_id` (Primary Key)
-- `product_name`
-- `price`
-- `category_id` (Foreign Key to `categories` table)
-- `stock_quantity` (to manage inventory)
 
-#### **6. Categories Table (Existing)**
-This table organizes products into categories:
-- `category_id` (Primary Key)
-- `category_name`
 
----
+/**
+ * Capture payment for the created order to complete the transaction.
+ * @see https://developer.paypal.com/docs/api/orders/v2/#orders_capture
+ */
+const captureOrder = async (orderID) => {
+    const collect = {
+        id: orderID,
+        prefer: "return=minimal",
+    };
 
-### **Relationships Between Tables**
-1. **`customers` ↔ `orders`**
-   - A customer can have multiple orders.
-2. **`orders` ↔ `order_items`**
-   - Each order can include multiple items.
-3. **`order_items` ↔ `products`**
-   - Tracks which products are part of an order.
-4. **`orders` ↔ `payments`**
-   - Each order has an associated payment.
+    try {
+        const { body, ...httpResponse } = await ordersController.ordersCapture(
+            collect
+        );
+        // Get more response info...
+        // const { statusCode, headers } = httpResponse;
+        return {
+            jsonResponse: JSON.parse(body),
+            httpStatusCode: httpResponse.statusCode,
+        };
+    } catch (error) {
+        if (error instanceof ApiError) {
+            // const { statusCode, headers } = error;
+            throw new Error(error.message);
+        }
+    }
+};
 
----
+// captureOrder route
+app.post("/api/orders/:orderID/capture", async (req, res) => {
+    try {
+        const { orderID } = req.params;
+        const { jsonResponse, httpStatusCode } = await captureOrder(orderID);
+        res.status(httpStatusCode).json(jsonResponse);
+    } catch (error) {
+        console.error("Failed to create order:", error);
+        res.status(500).json({ error: "Failed to capture order." });
+    }
+});
 
-### **Workflow Example**
-1. **Customer Checkout:**
-   - Save customer data in `customers` if they're new.
-   - Create a new entry in `orders` for their purchase.
 
-2. **Add Products to Order:**
-   - Insert rows in `order_items` linking the `order_id` to `product_id`, with quantities and prices.
-
-3. **Handle Payment:**
-   - Save payment details in `payments` for the `order_id`.
-
-4. **Update Inventory:**
-   - Reduce `stock_quantity` in `products` for the items in `order_items`.
-
----
-
-### **Example SQL Insertion**
-
-#### **Insert New Customer**
-```sql
-INSERT INTO customers (name, email, phone, billing_address, shipping_address)
-VALUES ('John Doe', 'john@example.com', '1234567890', '123 Main St', '123 Main St');
-```
-
-#### **Insert Order**
-```sql
-INSERT INTO orders (customer_id, total_amount, shipping_fee, tax)
-VALUES (1, 50.00, 5.00, 3.00);
-```
-
-#### **Insert Order Items**
-```sql
-INSERT INTO order_items (order_id, product_id, quantity, price)
-VALUES (1, 101, 2, 20.00), (1, 102, 1, 10.00);
-```
-
-#### **Insert Payment**
-```sql
-INSERT INTO payments (order_id, payment_method, payment_status)
-VALUES (1, 'Card', 'Paid');
-```
-
----
-
-Let me know if you need help with additional queries or logic for managing this database!
+app.listen(PORT, () => {
+    console.log(`Node server listening at http://localhost:${PORT}/`);
+}); 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Loader = () => {
+const Loader = () => { 
     return (
         <div className='loaderConatiner' >
             <span className="loader"></span>

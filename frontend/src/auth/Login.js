@@ -24,11 +24,11 @@ export const Login = () => {
     }
     return (
         <>
-            <div class="container_form" id="container">
-                <div class="form-container">
-                    <h1>Login </h1>
+            <div className="loginContainer">
+                <div className="loginSide">
+                    <h2>Login </h2>
                     <form onSubmit={handleSignin}>
-                        {erroSigninData && <div className='input_error'>{erroSigninData}</div>}
+                        {erroSigninData && <div className='error'>{erroSigninData}</div>}
                         <input onChange={handleSigninData} type="text" name="username" placeholder="Username" />
                         <input onChange={handleSigninData} type="password" name="password" placeholder="Password" />
                         <button type="submit">Login </button>

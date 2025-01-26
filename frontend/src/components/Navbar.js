@@ -11,14 +11,16 @@ const Navbar = () => {
             <div className="container">
                 <div className="logo">
                     <Link to={"/"}>
-                        Wolf&Lupus<span>Perfums</span></Link>
+                        {/* Wolf&Lupus<span>Perfums</span> */}
+                        <img src="http://localhost:3000/images/logo.jpeg" alt="" />
+                    </Link>
                 </div>
                 <nav className="navbar">
                     <ul className="nav-links">
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={"/categories"}>Categories</Link></li>
                         <li><Link to={"/product-catalog"}>Products</Link></li>
-                        <li><Link to={"/contact"}>Contact</Link></li>
+                        {/* <li><Link to={"/contact"}>Contact</Link></li> */}
                     </ul>
                 </nav>
                 <div className="cart">

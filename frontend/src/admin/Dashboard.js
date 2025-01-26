@@ -47,60 +47,7 @@ const Dashboard = () => {
                                     <i class="fa-brands fa-product-hunt"></i>
                                 </div>
                             </Link>
-                            <Link to={'/admin/designations'}>
-                                <div className='box'>
-                                    <div>
-                                        <h1>{counts.designations}</h1>
-                                        <h3>Designations</h3>
-                                    </div>
-                                    <i class="fa-solid fa-clipboard-list"></i>
-                                </div>
-                            </Link>
-                            <Link to={'/admin/teamMembers'}>
-                                <div className='box'>
-                                    <div>
-                                        <h1>{counts.members}</h1>
-                                        <h3>Team Members</h3>
-                                    </div>
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
-                            </Link>
-                            <Link to={'/admin/projects'}>
-                                <div className='box'>
-                                    <div>
-                                        <h1>{counts.projects}</h1>
-                                        <h3>Projects</h3>
-                                    </div>
-                                    <i class="fa-solid fa-bars-progress"></i>
-                                </div>
-                            </Link>
-                            <Link to={'/admin/tasks'}>
-                                <div className='box'>
-                                    <div>
-                                        <h1>{counts.tasksCompleted}</h1>
-                                        <h3>Completed Tasks</h3>
-                                    </div>
-                                    <i class="fa-solid fa-list-check"></i>
-                                </div>
-                            </Link>
-                            <Link to={'/admin/tasks'}>
-                                <div className='box'>
-                                    <div>
-                                        <h1>{counts.tasksPending}</h1>
-                                        <h3>Pending Tasks</h3>
-                                    </div>
-                                    <i class="fa-solid fa-list-ul"></i>
-                                </div>
-                            </Link>
-                            <Link to={'/admin/productivities'}>
-                                <div className='box'>
-                                    <div>
-                                        <h1>{counts.productivities}</h1>
-                                        <h3>Productivities</h3>
-                                    </div>
-                                    <i class="fa-solid fa-clipboard-check"></i>
-                                </div>
-                            </Link>
+                            
                         </div>
                     </>
                 }

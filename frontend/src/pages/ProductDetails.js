@@ -7,21 +7,19 @@ import Loader from '../components/Loader';
 import { CartContext } from '../Context';
 
 const ProductDetails = () => {
-    const { id } = useParams(); // Get product ID from route parameters
-    const { addToCart } = useContext(CartContext); // Use CartContext to access addToCart function
+    const { id } = useParams(); 
+    const { addToCart } = useContext(CartContext);
     const [loadingGetSingleProduct, setLoadingGetSingleProduct] = useState(false);
     const [productsData, setProductsData] = useState({});
-    const [selectedSize, setSelectedSize] = useState(null); // Track selected size
-    const [quantity, setQuantity] = useState(1); // Track quantity
+    const [selectedSize, setSelectedSize] = useState(null); 
+    const [quantity, setQuantity] = useState(1); 
 
-    // Fetch single product data
     const getSingleProduct = async () => {
         setLoadingGetSingleProduct(true);
         try {
             const response = await axios.get(`/products/${id}`);
             setProductsData(response.data);
 
-            // Automatically select the first size if available
             if (response.data.sizes?.length > 0) {
                 setSelectedSize(response.data.sizes[0]);
             }
@@ -32,13 +30,11 @@ const ProductDetails = () => {
         }
     };
 
-    // Handle quantity changes
     const handleQuantityChange = (e) => {
-        const value = Math.max(1, parseInt(e.target.value) || 1); // Minimum quantity is 1
+        const value = Math.max(1, parseInt(e.target.value) || 1);
         setQuantity(value);
     };
 
-    // Handle size selection changes
     const handleSizeChange = (e) => {
         const selected = productsData.sizes.find((size) => size.size === e.target.value);
         setSelectedSize(selected);
