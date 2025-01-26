@@ -62,7 +62,7 @@ const Cart = () => {
                                         <strong>Total Price:</strong> ${totalPrice.toFixed(2)}
                                     </p>
                                 </div>
-                                <Link to="/checkout">
+                                <Link to="/choose-payment">
                                     <button className="btn checkout-btn">Proceed to Checkout</button>
                                 </Link>
                             </div>
@@ -77,7 +77,7 @@ const Cart = () => {
                     )}
                 </div>
             </section>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 };

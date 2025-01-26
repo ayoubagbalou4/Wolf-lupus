@@ -5,14 +5,16 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Loader from '../components/Loader';
 import { CartContext } from '../Context';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const { addToCart } = useContext(CartContext);
     const [loadingGetSingleProduct, setLoadingGetSingleProduct] = useState(false);
     const [productsData, setProductsData] = useState({});
-    const [selectedSize, setSelectedSize] = useState(null); 
-    const [quantity, setQuantity] = useState(1); 
+    const [selectedSize, setSelectedSize] = useState(null);
+    const [quantity, setQuantity] = useState(1);
+    const [comment, setComment] = useState([]);
 
     const getSingleProduct = async () => {
         setLoadingGetSingleProduct(true);
@@ -40,9 +42,47 @@ const ProductDetails = () => {
         setSelectedSize(selected);
     };
 
+    const addReview = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.post('/reviews', {
+                product_id: id,
+                comment
+            })
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Add review With Success",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            getReviews()
+            setComment('')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         getSingleProduct();
     }, []);
+
+    const [reviews, setReviews] = useState([])
+    const [loadingReviews, setLoadingReviews] = useState([])
+    const getReviews = async () => {
+        setLoadingReviews(true)
+        try {
+            const response = await axios.get(`/reviews/${id}`)
+            setReviews(response.data)
+            setLoadingReviews(false)
+        } catch (error) {
+            console.log(error)
+            setLoadingReviews(false)
+        }
+    }
+    useEffect(() => {
+        getReviews()
+    }, [])
 
     return (
         <>
@@ -117,6 +157,39 @@ const ProductDetails = () => {
                                         <li>Heart Notes: Rose, Jasmine</li>
                                         <li>Base Notes: Sandalwood, Amber</li>
                                     </ul>
+                                </div>
+
+                                {/* Add Reviews Section */}
+                                <div className="product-reviews">
+                                    <h3>Customer Reviews</h3>
+                                    {reviews.length > 0 ? (
+                                        <ul>
+                                            {reviews.map((review, index) => (
+                                                <li key={index} className="review-item">
+                                                    {review.comment}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        <p>No reviews yet.</p>
+                                    )}
+                                </div>
+
+                                {/* Add Review Form */}
+                                <div className="add-review">
+                                    <h3>Add Your Review</h3>
+                                    <form onSubmit={addReview}>
+                                        <textarea
+                                            value={comment}
+                                            onChange={(e) => setComment(e.target.value)}
+                                            placeholder="Write your review here..."
+                                            rows="4"
+                                            className="review-textarea"
+                                        ></textarea>
+                                        <button type="submit" className="btn submit-review">
+                                            Submit Review
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

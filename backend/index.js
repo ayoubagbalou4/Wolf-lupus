@@ -33,8 +33,9 @@ app.use('/', customerRoutes);
 const orderRoutes = require('./routes/orders.routes');
 app.use('/', orderRoutes);
 
-const orderItemRoutes = require('./routes/orderItems.routes');
-app.use('/', orderItemRoutes);
+const reviewRoutes = require('./routes/reviews.routes');
+app.use('/', reviewRoutes);
+
 
 
 

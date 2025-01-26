@@ -47,6 +47,15 @@ const Dashboard = () => {
                                     <i class="fa-brands fa-product-hunt"></i>
                                 </div>
                             </Link>
+                            <Link to={'/admin/Reviews'}>
+                                <div className='box'>
+                                    <div>
+                                        <h1>{counts.reviewsCount}</h1>
+                                        <h3>Reviews</h3>
+                                    </div>
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                            </Link>
                             
                         </div>
                     </>

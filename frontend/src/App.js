@@ -18,6 +18,11 @@ import Context from './Context';
 import Checkout from './pages/Checkout';
 import ProductsCatalog from './pages/ProductsCatalog';
 import ProductsByCategory from './pages/ProductsByCategory';
+import Reviews from './admin/Reviews';
+import ChoosePayment from './pages/ChoosePayment';
+import PaymentCash from './pages/PaymentCash';
+import Orders from './admin/Orders';
+import OrderDetails from './admin/OrderDetails';
 
 const App = () => {
 
@@ -33,6 +38,10 @@ const App = () => {
           <Route path='/product/:id' element={<ProductDetails />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/choose-payment' element={<ChoosePayment />} />
+          <Route path='/payment-cash' element={<PaymentCash />} />
+          
+
           <Route path='/categories' element={<CategoriesPage />} />
           <Route path='/product-catalog' element={<ProductsCatalog />} />
           <Route path='/categories/:category' element={<ProductsByCategory />} />
@@ -47,6 +56,13 @@ const App = () => {
           <Route path='/admin/categories' element={<Categories />} />
           <Route path='/admin/add-category' element={<AddCategory />} />
           <Route path='/admin/edit-category/:id' element={<EditCategory />} />
+
+          <Route path='/admin/reviews' element={<Reviews />} />
+
+          <Route path='/admin/orders' element={<Orders />} />
+          <Route path='/admin/order-details' element={<Orders />} />
+          <Route path='/admin/order-details/:id' element={<OrderDetails />} />
+
         </Routes>
       </Context>
     </BrowserRouter>

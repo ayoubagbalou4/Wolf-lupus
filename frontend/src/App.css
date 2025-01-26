@@ -955,6 +955,47 @@
     }
 }
 
+
+.product-reviews {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.product-reviews h3 {
+    margin-bottom: 1rem;
+}
+
+.review-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.review-item p {
+    margin: 0.5rem 0 0;
+}
+
+.add-review {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.add-review h3 {
+    margin-bottom: 1rem;
+}
+
+.review-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+
+
+
 .loaderConatiner {
     display: flex;
     align-items: center;
@@ -1196,12 +1237,14 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
 .loginSide {
     box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
     padding: 35px 25px;
     width: 40%;
     border-radius: 5px;
 }
+
 .loginSide h2 {
     text-align: center;
     margin-bottom: 15px;
@@ -1220,6 +1263,7 @@ h2 {
     width: 100%;
     margin-bottom: 8px;
 }
+
 input, textarea, select {
     padding: 12px;
     border: 2px solid #e6e6e6;
@@ -1239,6 +1283,118 @@ button {
     font-weight: 600;
     cursor: pointer;
 }
+
 .error {
     color: red;
+}
+
+.choose-payment {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.choose-payment h2 {
+    color: #333;
+}
+
+.payment-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.payment-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.proceed-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.proceed-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.payment-form {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+.paymentCash {
+    text-align: center;
+    color: #333;
+    margin: 50px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.order-summary, .total-summary {
+    margin-bottom: 20px;
+}
+
+.total-summary p {
+    font-weight: bold;
+}
+
+.place-order-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.place-order-btn:hover {
+    background: #0056b3;
 }

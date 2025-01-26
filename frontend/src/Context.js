@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
             icon: 'success',
             title: 'Added to cart!',
             showConfirmButton: false,
-            timer: 2000,
+            timer: 1000,
             timerProgressBar: true,
         });
     };

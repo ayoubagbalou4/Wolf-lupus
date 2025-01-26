@@ -181,9 +181,10 @@ input:focus , textarea:focus , select:focus {
 .actionTable {
     display: flex;
     width: 100%;
+    justify-content: center;
 }
 .actionTable button {
-    width: 100%;
+    width: fit-content;
 }
 .brand {
     text-align: center;
