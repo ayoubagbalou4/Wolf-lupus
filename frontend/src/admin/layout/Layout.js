@@ -34,7 +34,7 @@ const Layout = (props) => {
                     <Link className={props.categories} to="/admin/categories"><i class="fa-solid fa-list"></i> Categories</Link>
                     <Link className={props.products} to="/admin/products"><i class="fa-brands fa-product-hunt"></i> Products</Link>
                     <Link className={props.reviews} to="/admin/reviews"><i class="fa-solid fa-comments"></i> Reviews</Link>
-                    <Link className={props.orders} to="/admin/orders"><i class="fa-solid fa-flag"></i> Orders</Link>
+                    <Link className={props.orders} to="/admin/orders"><i class="fa-solid fa-circle-check"></i> Orders</Link>
                 </div>
             </div>
             <div className="main">

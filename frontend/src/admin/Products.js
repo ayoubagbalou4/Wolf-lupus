@@ -67,9 +67,8 @@ const Products = () => {
                                 <th>name</th>
                                 <th>description</th>
                                 <th>price</th>
-                                <th>stock_quantity</th>
-                                <th>category_id</th>
-                                {/* <th>image_url</th> */}
+                                <th>stock quantity</th>
+                                <th>category</th>
                                 <th>actions</th>
                             </tr>
                             {
@@ -86,7 +85,6 @@ const Products = () => {
                                         </td>
                                         <td>{product.stock_quantity}</td>
                                         <td>{product.category_id?.name}</td>
-                                        {/* <td>{product.image_url}</td> */}
 
                                         <td className='actionTable'>
                                             <button onClick={() => deleteProductConfirm(product._id)} className='delete'>Delete</button>

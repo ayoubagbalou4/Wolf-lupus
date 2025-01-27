@@ -40,7 +40,7 @@ exports.updateReview = async (req, res) => {
         const { product_id,comment,status } = req.body;
         const updatedReview = await Review.findByIdAndUpdate(
             id,
-            { product_id,comment,status },
+            { product_id,comment,status : status },
             { new: true, runValidators: true }
         );
         if (!updatedReview) {

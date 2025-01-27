@@ -81,7 +81,6 @@ const Orders = () => {
             <>
                 <div className="searchAdd">
                     <input type="text" placeholder="Search For Any Item" />
-                    <Link to={'/admin/add-order'}><button>Add Order</button></Link>
                 </div>
 
                 {
@@ -91,10 +90,10 @@ const Orders = () => {
                         <table className='table'>
                             <thead>
                                 <tr>
-                                    <th>customerName</th>
-                                    <th>customerPhone</th>
-                                    <th>customerAddress</th>
-                                    <th>totalAmount</th>
+                                    <th>customer Name</th>
+                                    <th>customer Phone</th>
+                                    <th>customer Address</th>
+                                    <th>total Amount</th>
                                     <th>status</th>
                                     <th>items</th>
                                     <th>actions</th>

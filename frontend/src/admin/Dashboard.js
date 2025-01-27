@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from './layout/Layout'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Loader from '../components/Loader'
 
 const Dashboard = () => {
 
@@ -26,7 +27,7 @@ const Dashboard = () => {
     return (
         <Layout dashboard="active" header="dashboard" content={
             <>
-                {loadingCounts ? <div className="loader1"></div> :
+                {loadingCounts ? <Loader /> :
                     <>
                         <div className='boxs'>
                             <Link to={'/admin/Categories'}>
@@ -54,6 +55,15 @@ const Dashboard = () => {
                                         <h3>Reviews</h3>
                                     </div>
                                     <i class="fa-solid fa-comments"></i>
+                                </div>
+                            </Link>
+                            <Link to={'/admin/orders'}>
+                                <div className='box'>
+                                    <div>
+                                        <h1>{counts.ordersCount}</h1>
+                                        <h3>Orders</h3>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check"></i>
                                 </div>
                             </Link>
                             

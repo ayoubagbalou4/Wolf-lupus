@@ -26,7 +26,6 @@ import OrderDetails from './admin/OrderDetails';
 
 const App = () => {
 
-
   axios.defaults.baseURL = 'https://wolf-lupus-o4oy.vercel.app/'
   // axios.defaults.baseURL = 'http://localhost:4000/'
 

@@ -102,7 +102,7 @@ const ProductDetails = () => {
                                 <p className="product-description">{productsData.description}</p>
 
                                 <div className="product-options">
-                                    <label htmlFor="size">Size:</label>
+                                    <label htmlFor="size">Size : </label>
                                     <select
                                         id="size"
                                         name="size"

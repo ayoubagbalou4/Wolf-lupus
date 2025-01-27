@@ -1,6 +1,7 @@
 const Category = require('../models/Category'); 
 const Product = require('../models/Product'); 
 const Review = require('../models/Review'); 
+const Order = require('../models/Order');
 
 
 exports.getCounts = async (req, res) => {
@@ -9,11 +10,13 @@ exports.getCounts = async (req, res) => {
         const categoryCount = await Category.countDocuments();
         const productCount = await Product.countDocuments();
         const reviewsCount = await Review.countDocuments();
+        const ordersCount = await Order.countDocuments();
 
         res.json({
             categoryCount, 
             productCount,
-            reviewsCount
+            reviewsCount,
+            ordersCount
         });
     } catch (error) {
         console.error('Error fetching counts:', error);

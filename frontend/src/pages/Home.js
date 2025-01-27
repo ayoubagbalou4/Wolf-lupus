@@ -41,6 +41,25 @@ const Home = () => {
         getCategories()
     }, [])
 
+    const [reviews, setReviews] = useState([])
+    const [loadingReviews, setLoadingReviews] = useState(false)
+
+    const getReviews = async () => {
+        setLoadingReviews(true)
+        try {
+            const response = await axios.get('/reviews')
+            setReviews(response.data)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoadingReviews(false)
+        }
+    }
+
+    useEffect(() => {
+        getReviews()
+    }, [])
+
 
     return (
         <>
@@ -101,22 +120,17 @@ const Home = () => {
             <section className="testimonials">
                 <h2 className="section-title">What Our Customers Say</h2>
                 <div className="testimonials-container">
-                    <div className="testimonial-card">
-                        <p className="testimonial-text">"Absolutely love these perfumes! The scents are long-lasting and perfect for
-                            any occasion. Highly recommend!"</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <p className="testimonial-text">"The variety is amazing, and the quality is top-notch. My go-to shop for
-                            gifts and personal use!"</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <p className="testimonial-text">"Fast shipping and excellent customer service. I'm beyond happy with my
-                            purchase!"</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <p className="testimonial-text">"The fragrances are unique and luxurious. I've received so many compliments
-                            since I started using them."</p>
-                    </div>
+                    {
+                        reviews.map((review, index) => {
+                            if (review.status) {
+                                return (
+                                    <div className="testimonial-card" key={index}>
+                                        <p className="testimonial-text">"{review.comment}"</p>
+                                    </div>
+                                )
+                            }
+                        })
+                    }
                 </div>
             </section>
 
