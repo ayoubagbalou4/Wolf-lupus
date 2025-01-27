@@ -49,7 +49,7 @@ const Home = () => {
             <section className="hero-banner">
                 <div className="hero-overlay"></div>
                 <div className="hero-content">
-                    <h1>Your Signature Scent Awaits</h1>
+                    <h1>Your Wolf&Lupus Perfums</h1>
                     <p>Discover exclusive collections with up to <span>50% OFF</span></p>
                     <div className="hero-buttons">
                         <a href="#shop-now" className="btn primary-btn">Shop Now</a>
