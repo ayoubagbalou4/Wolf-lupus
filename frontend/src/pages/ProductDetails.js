@@ -123,7 +123,7 @@ const ProductDetails = () => {
                                 </div>
 
                                 <div className="quantity-cart">
-                                    <label htmlFor="quantity">Quantity:</label>
+                                    <label htmlFor="quantity">Quantity : </label>
                                     <input
                                         type="number"
                                         id="quantity"
