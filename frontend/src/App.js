@@ -23,6 +23,8 @@ import ChoosePayment from './pages/ChoosePayment';
 import PaymentCash from './pages/PaymentCash';
 import Orders from './admin/Orders';
 import OrderDetails from './admin/OrderDetails';
+import ScrollToTop from './components/ScrollToTop';
+import PaymentCard from './pages/PaymentCard';
 
 const App = () => {
 
@@ -32,6 +34,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Context>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductDetails />} />
@@ -39,7 +42,8 @@ const App = () => {
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/choose-payment' element={<ChoosePayment />} />
           <Route path='/payment-cash' element={<PaymentCash />} />
-          
+          <Route path='/payment-card' element={<PaymentCard />} />
+
 
           <Route path='/categories' element={<CategoriesPage />} />
           <Route path='/product-catalog' element={<ProductsCatalog />} />

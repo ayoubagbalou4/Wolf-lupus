@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../components/Loader'
+import Footer from '../components/Footer'
 
 const ProductsByCategory = () => {
 
@@ -55,6 +56,8 @@ const ProductsByCategory = () => {
                         </div>
                     </section>
             }
+
+            <Footer />
         </>
     )
 }

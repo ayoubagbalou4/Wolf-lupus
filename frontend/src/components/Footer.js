@@ -13,8 +13,8 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Follow Us</h3>
                     <div className="social-links">
-                        <a href="#" className="social-icon"><i className="fab fa-tiktok"></i></a>
-                        <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/wolflupus_parfume" target='_blank' className="social-icon"><i className="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wolflupus_parfume" target='_blank' className="social-icon"><i className="fab fa-tiktok"></i></a>
                     </div>
                 </div>
 

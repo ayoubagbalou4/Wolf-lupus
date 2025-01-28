@@ -196,6 +196,8 @@ const ProductDetails = () => {
                     </div>
                 </section>
             )}
+
+            <Footer />
         </>
     );
 };
