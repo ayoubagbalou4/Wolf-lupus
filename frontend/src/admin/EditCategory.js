@@ -3,6 +3,7 @@ import Layout from './layout/Layout'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import Loader from '../components/Loader'
 
 const EditCategory = () => {
 
@@ -83,7 +84,7 @@ const EditCategory = () => {
             <>
                 <div className="formAdmin">
                     <h2>Edit Category</h2>
-                    {loadingGetSingleCategory ? <div className="loader1"></div> :
+                    {loadingGetSingleCategory ? <Loader /> :
                         <form onSubmit={editCategory}>
                             <div>
                                 <p>name</p>

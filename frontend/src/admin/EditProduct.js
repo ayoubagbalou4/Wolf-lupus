@@ -3,6 +3,7 @@ import Layout from './layout/Layout';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Loader from '../components/Loader';
 
 const EditProduct = () => {
     const { id } = useParams();
@@ -122,7 +123,7 @@ const EditProduct = () => {
                     <div className="formAdmin">
                         <h2>Edit Product</h2>
                         {loadingGetSingleProduct ? (
-                            <div className="loader1"></div>
+                            <Loader />
                         ) : (
                             <form onSubmit={editProduct}>
                                 <div>
@@ -207,6 +208,10 @@ const EditProduct = () => {
                                     <button type="button" onClick={addSizeField}>
                                         Add Size
                                     </button>
+                                </div>
+                                <div>
+                                    <p>Current Image</p>
+                                    {productsData.image_url && <img src={productsData.image_url} alt="Category" width="100" />}
                                 </div>
                                 <div>
                                     <p>Image</p>

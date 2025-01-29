@@ -1,0 +1,1178 @@
+[
+    {
+        "name": "produit 12",
+        "description": "description 12",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 74,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 105,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 140,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 32,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 13",
+        "description": "description 13",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 67,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 89,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 120,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 45,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    },
+    {
+        "name": "produit 14",
+        "description": "description 14",
+        "sizes": [
+            {
+                "size": "30",
+                "price": 72,
+                "_id": "679aaa6e2af5ac6805e95311"
+            },
+            {
+                "size": "50",
+                "price": 98,
+                "_id": "679aaba7cfaf4180e806a5c3"
+            },
+            {
+                "size": "80",
+                "price": 132,
+                "_id": "679aaba7cfaf4180e806a5c4"
+            }
+        ],
+        "stock_quantity": 51,
+        "category_id": "678eb72bc71ae736b4b618b2",
+        "image_url": "https://i.ibb.co/sJJT1249/Whats-App-Image-2025-01-29-at-13-45-33-2.jpg"
+    }
+]

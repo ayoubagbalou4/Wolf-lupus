@@ -24,16 +24,28 @@ exports.getCounts = async (req, res) => {
     }
 };
 
+// exports.createProduct = async (req, res) => {
+//     try {
+//         const { name,description,sizes,stock_quantity,category_id,image_url } = req.body;
+//         const newProduct = Product({ name,description,sizes,stock_quantity,category_id,image_url });
+//         await newProduct.save();
+//         res.status(201).json({ message: 'Product created successfully', product: newProduct });
+//     } catch (error) {
+//         res.status(500).json({ error: 'Failed to create product', details: error.message });
+//     }
+// };
+
+
 exports.createProduct = async (req, res) => {
     try {
-        const { name,description,sizes,stock_quantity,category_id,image_url } = req.body;
-        const newProduct = Product({ name,description,sizes,stock_quantity,category_id,image_url });
-        await newProduct.save();
-        res.status(201).json({ message: 'Product created successfully', product: newProduct });
+        const products = req.body;
+        const newProducts = await Product.insertMany(products);
+        res.status(201).json({ message: 'Products created successfully', products: newProducts });
     } catch (error) {
-        res.status(500).json({ error: 'Failed to create product', details: error.message });
+        res.status(500).json({ error: 'Failed to create products', details: error.message });
     }
 };
+
 
 exports.getAllProducts = async (req, res) => {
     try {

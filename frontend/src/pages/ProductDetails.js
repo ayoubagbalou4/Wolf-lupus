@@ -97,7 +97,7 @@ const ProductDetails = () => {
                                 <img src={productsData.image_url} alt={productsData.name} />
                             </div>
 
-                            <div className="product-info">
+                            <div className="product-info-details">
                                 <h1 className="product-title">{productsData.name}</h1>
                                 <p className="product-description">{productsData.description}</p>
 
