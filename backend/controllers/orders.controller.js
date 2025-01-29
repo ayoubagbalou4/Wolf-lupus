@@ -4,7 +4,6 @@ exports.createOrder = async (req, res) => {
   try {
     const { customerName, customerPhone, customerAddress, items, totalAmount } = req.body;
 
-    // Create a new order
     const newOrder = new Order({
       customerName, 
       customerPhone,
