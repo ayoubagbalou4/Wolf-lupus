@@ -29,7 +29,7 @@ import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 const App = () => {
 
-  axios.defaults.baseURL = 'https://wolf-lupus-o4oy.vercel.app/'
+  axios.defaults.baseURL = 'https://wolf-lupus-ko4l.vercel.app/'
   // axios.defaults.baseURL = 'http://localhost:4000/'
 
   return (
