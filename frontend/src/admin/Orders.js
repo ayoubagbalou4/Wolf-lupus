@@ -112,10 +112,10 @@ const Orders = () => {
                                                     value={selectedStatus[order._id] || order.status} 
                                                     onChange={(event) => handleStatusChange(order._id, event)}
                                                 >
-                                                    <option value="pending">Pending</option>
-                                                    <option value="processing">Processing</option>
-                                                    <option value="completed">Completed</option>
-                                                    <option value="shipped">Shipped</option>
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="Processing">Processing</option>
+                                                    <option value="Delivered">Delivered</option>
+                                                    <option value="Cancelled">Cancelled</option>
                                                 </select>
                                             </td>
                                             <td><Link to={`/admin/order-details/${order._id}`} >View</Link></td>

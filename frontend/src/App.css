@@ -407,7 +407,7 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
-    text-align: left;
+    text-align: center;
 }
 
 .product-card img {
@@ -1074,7 +1074,8 @@ h2 {
     margin: 50px 0;
     font-size: 1.2rem;
 }
-.empty-cart p{
+
+.empty-cart p {
     margin: 10px 0;
 }
 
@@ -1115,6 +1116,7 @@ h2 {
         width: 100%;
         text-align: center;
     }
+
     .item-total {
         margin-bottom: 10px;
     }
@@ -1313,4 +1315,82 @@ button {
 
 .place-order-btn:hover {
     background: #0056b3;
+}
+
+
+.payment-card {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 2rem 1rem;
+}
+
+.payment-card .container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Titles */
+.payment-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.payment-summary {
+    margin-bottom: 1.5rem;
+}
+
+.payment-summary h3 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.payment-summary p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* PayPal button container */
+.paypal-button-container {
+    margin-top: 1.5rem;
+}
+
+/* Success message */
+.payment-success {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Empty cart message */
+.empty-cart {
+    font-size: 1rem;
+    color: #666;
+}
+
+.empty-cart p {
+    margin-bottom: 1rem;
+}
+
+.empty-cart a .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.empty-cart a .btn:hover {
+    background-color: #0056b3;
 }
