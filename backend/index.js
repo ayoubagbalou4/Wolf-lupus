@@ -6,7 +6,7 @@ const PORT = 4000;
 
 const cors = require('cors');
 app.use(cors({
-    origin: ["http://localhost:3000", "https://wolf-lupus.vercel.app", "https://wolf-lupus-o4oy.vercel.app"],
+    origin: ["http://localhost:3000", "https://wolf-lupus.vercel.app", "https://wolf-lupus-ko4l.vercel.app"],
     credentials: true
 }));
 
