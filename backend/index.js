@@ -36,8 +36,8 @@ app.use('/', orderRoutes);
 const reviewRoutes = require('./routes/reviews.routes');
 app.use('/', reviewRoutes);
 
-const paypalRoutes = require('./routes/paypal.routes');
-app.use('/api/paypal', paypalRoutes);
+// const paypalRoutes = require('./routes/paypal.routes');
+// app.use('/api/paypal', paypalRoutes);
 
 
 app.get('/', (req, res) => {
