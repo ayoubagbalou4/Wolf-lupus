@@ -22,15 +22,15 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    paymentMethod: {
-      type: String,
-      required: true,
-      default: 'COD',
-      enum: ['COD', 'Online'],
-    },
+    // paymentMethod: {
+    //   type: String,
+    //   required: true,
+    //   default: 'COD',
+    //   enum: ['COD', 'Online'],
+    // },
     status: {
       type: String,
-      required: true,
+      default: 'Pending',
       enum: ['Pending', 'Processing', 'Delivered', 'Cancelled'],
     },
     items: [
